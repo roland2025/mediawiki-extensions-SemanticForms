@@ -61,6 +61,14 @@ class SFPageSchemas extends PSExtensionHandler {
 		if ( $tagName == "semanticforms_FormInput" || $tagName == "semanticforms_PageSection" ) {
 			foreach ( $xml->children() as $tag => $child ) {
 				if ( $tag == $tagName ) {
+					if ( "semanticforms_FormInput" == $tagName ) {
+						foreach ( $xml->children() as $childtag => $xmlchild ) {
+							if($childtag == "TextBeforeField" || $childtag == "Description" || $childtag == "DescriptionTooltipMode"){
+								$sfarray[$childtag] = (string)$xmlchild;
+							}
+						}
+					}
+
 					foreach ( $child->children() as $prop ) {
 						if ( $prop->getName() == 'InputType' ) {
 							$sfarray[$prop->getName()] = (string)$prop;
