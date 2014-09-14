@@ -291,7 +291,7 @@ END;
 
 		$fieldLabel = $this->template_field->getLabel();
 		if ( $textBeforeField != '' ) {
-			$fieldLabel = $textBeforeField . ' ' . $fieldLabel;
+			$text .= "|colspan=\"2\"|$textBeforeField\n|-\n";
 		}
 
 		if ( $part_of_multiple ) {
