@@ -201,18 +201,21 @@ class SFPageSchemas extends PSExtensionHandler {
 
 				if ( $val !== '' ) {
 					$xml .= '<Description>' . $val . '</Description>';
+					$xmlPerField[$fieldNum] = $xml;
 				}
 
 			} elseif ( substr( $var, 0, 18 ) == 'sf_input_desctool_' ) {
 
 				if ( $val !== '' ) {
 					$xml .= '<DescriptionTooltipMode>' . $val . '</DescriptionTooltipMode>';
+					$xmlPerField[$fieldNum] = $xml;
 				}
 
 			} elseif ( substr( $var, 0, 14 ) == 'sf_input_befo_' ) {
 
 				if ( $val !== '' ) {
 					$xml .= '<TextBeforeField>' . $val . '</TextBeforeField>';
+					$xmlPerField[$fieldNum] = $xml;
 				}
 
 			} elseif ( substr( $var, 0, 14 ) == 'sf_key_values_' ) {
